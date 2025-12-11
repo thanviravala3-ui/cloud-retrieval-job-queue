@@ -1,0 +1,12 @@
+require('dotenv').config();
+
+const config = {
+  port: process.env.PORT || 4000,
+  redis: {
+    host: process.env.REDIS_HOST || '127.0.0.1',
+    port: Number(process.env.REDIS_PORT) || 6379
+  },
+  queueName: process.env.QUEUE_NAME || 'retrieval-jobs'
+};
+
+module.exports = config;
